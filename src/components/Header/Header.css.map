@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,OAAO,CAAC;EACN,gBAAgB,ECFA,OAAO;EDGvB,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,MAAM;EACf,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,YAAY;CAC9B;;AACD,AAAA,KAAK,CAAC;EACJ,KAAK,ECTQ,KAAK;EDUlB,UAAU,EAAE,IAAI;EAChB,WAAW,EAAE,GAAG;CACjB;;AAED,AAAA,WAAW;AACX,WAAW,CAAC,GAAG,CAAC;EACd,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CACb",
+    "sources": [
+        "Header.scss",
+        "../../common/colors.scss"
+    ],
+    "names": [],
+    "file": "Header.css"
+}
