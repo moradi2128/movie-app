@@ -1,0 +1,104 @@
+@import "./src/common/colors.scss";
+.home {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  &-content {
+    height: 100%;
+    padding: 10px 10px 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 3;
+  }
+}
+.banner::before,
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.banner::before {
+  background-image: url("../../images/banner.png");
+  z-index: 0;
+}
+.banner::after {
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.banner-search {
+  margin-top: 15px;
+  .input-search {
+    width: 30%;
+    margin-left: 1rem;
+    padding: 0.5rem 0;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid gray;
+    transition: all 0.3s;
+  }
+  .input-search:focus {
+    border-bottom: 1px solid white;
+    transition: all 0.3s;
+    color: white;
+  }
+  .input-search::placeholder {
+    color: gray;
+  }
+  i {
+    color: white;
+  }
+}
+
+.content-center {
+  color: white;
+  width: 50%;
+  padding: 1rem;
+  h1 {
+    font-weight: 600;
+    font-size: xxx-large;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    font-size: small;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    word-break: break-all;
+  }
+  .btn-primary,
+  .btn-secondary {
+    color: white;
+    padding: 0.4rem 1.5rem;
+    font-size: small;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary {
+    background-color: $secondary-color;
+    margin-right: 7px;
+  }
+  .btn-secondary {
+    background-color: unset;
+    border: 1px solid #fff;
+  }
+}
+
+.movie-recently {
+  width: 100%;
+  background-color: rgba(#151519, 0.6);
+  height: 200px;
+  position: relative;
+}

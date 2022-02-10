@@ -7,6 +7,7 @@ import {
   getAllMoviesOrShowDetail,
   removeFetchAsyncMoviesOrShowsDetail,
 } from "../../features/movies/movieSlice";
+import Loading from "../Loading/Loading";
 const MovieDetail = () => {
   const { imdbId } = useParams();
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const MovieDetail = () => {
   return (
     <div className="movie-section">
       {Object.keys(data).length === 0 ? (
-        <div>Loading...</div>
+        <Loading />
       ) : (
         <>
           <div className="section-left">

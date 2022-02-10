@@ -1,0 +1,8 @@
+@import "./src/common/colors.scss";
+
+.movie-containers {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}

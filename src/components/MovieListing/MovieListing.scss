@@ -6,12 +6,25 @@
     color: $font-secondary;
     margin-bottom: 30px;
     font-weight: 400;
-
   }
 }
 .movie-container,
 .show-container {
+  margin-bottom: 1rem;
+  padding: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  grid-gap: 15px;
+  grid-gap: 20px;
+}
+.movie-container .card-item:hover {
+  transform: scale(1.1) translateY(0px);
+  box-shadow: 0 0 80px 1px black;
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+  text-align: center;
+  color: white;
 }
