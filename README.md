@@ -1,6 +1,6 @@
 # Movie App
 
-A to-do list application made with React.
+A Movie app list application made with React.
 Packages used:
 1. redux react-redux @reduxjs/toolkit
 2. axios
