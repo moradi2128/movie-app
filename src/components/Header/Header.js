@@ -1,35 +1,50 @@
-import React from "react";
+import * as React from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import avatar from "../../images/2-1.jpg";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 const Header = () => {
+  const [value, setValue] = React.useState(0);
   return (
     <header className="header">
       <nav>
         <Link to="/">
           <span className="logo">Movie App</span>
         </Link>
-        <ul className="nav-item">
+        <BottomNavigation
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+          className="nav-item"
+        >
           <Link to="/">
-            <li className="active" title="Home" aria-selected="true">
-              <i className="fa fa-house"></i>
-            </li>
+            <BottomNavigationAction
+              active="true"
+              icon={<i className="fa fa-house"></i>}
+              className="link-li"
+            />
           </Link>
           <Link to="/movie">
-            <li title="Movie" aria-selected="false">
-              <i className="fa fa-film"></i>
-            </li>
+            <BottomNavigationAction
+              icon={<i className="fa fa-film"></i>}
+              className="link-li"
+            />
           </Link>
           <Link to="/series">
-            <li aria-selected="false">
-              <i className="fa fa-folder"></i>
-            </li>
+            <BottomNavigationAction
+              icon={<i className="fa fa-folder"></i>}
+              className="link-li"
+            />
           </Link>
-
-          <li aria-selected="false">
-            <i className="fa fa-sliders"></i>
-          </li>
-        </ul>
+          <Link to="/">
+            <BottomNavigationAction
+              icon={<i className="fa fa-sliders"></i>}
+              className="link-li"
+            />
+          </Link>
+        </BottomNavigation>
         <div className="user-image">
           <img src={avatar} alt="user" />
           <span>Mohammad Moradi</span>

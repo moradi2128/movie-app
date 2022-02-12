@@ -56,8 +56,17 @@
   .input-search::placeholder {
     color: gray;
   }
-  i {
+  .input-search:focus::placeholder{
     color: white;
+  }
+  .btn-search {
+    background: unset;
+    border: none;
+    font-size: larger;
+    border-bottom: 1;
+    margin-left: 0.5rem;
+    color: white;
+    cursor: pointer;
   }
 }
 

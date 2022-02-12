@@ -6,13 +6,14 @@ import {
   fetchAsyncMoviesOrShowsDetail,
   getAllMoviesOrShowDetail,
   removeFetchAsyncMoviesOrShowsDetail,
+  getAddSearch
 } from "../../features/movies/movieSlice";
 import Loading from "../Loading/Loading";
 const MovieDetail = () => {
   const { imdbId } = useParams();
   const dispatch = useDispatch();
   const data = useSelector(getAllMoviesOrShowDetail);
-
+  const searchData = useSelector(getAddSearch);
   useEffect(() => {
     dispatch(fetchAsyncMoviesOrShowsDetail(imdbId));
     return () => {

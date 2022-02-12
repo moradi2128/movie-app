@@ -1,30 +1,47 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import {
   fetchAsyncMovies,
   fetchAsyncShows,
+  addSearchValue,
+  getAddSearch,
 } from "../../features/movies/movieSlice";
 import MovieBanner from "../../components/MovieBanner/MovieBanner";
 
 import "./Home.scss";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+  const [search, setSearch] = useState("");
+  const searchData = useSelector(getAddSearch);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchAsyncMovies());
-    dispatch(fetchAsyncShows());
-  }, [dispatch]);
+    dispatch(fetchAsyncMovies(searchData.payload));
+    dispatch(fetchAsyncShows(searchData.payload));
+  }, [dispatch, searchData]);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(addSearchValue(search));
+    setSearch("");
+  };
   return (
     <div className="home">
       <div className="banner">
         <div className="banner-content">
           <div className="banner-search">
-            <input
-              className="input-search"
-              type="text"
-              placeholder="Film , TV , Series , ..."
-            />
-            <i className="fa fa-search"></i>
+            <form onSubmit={submitHandler}>
+              <input
+                className="input-search"
+                type="text"
+                placeholder="Film , TV , Series , ..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+              <button type="submit" className="btn-search ">
+                <i className="fa fa-search"></i>
+              </button>
+            </form>
           </div>
           <div className="content-center">
             <h1>Marvel</h1>

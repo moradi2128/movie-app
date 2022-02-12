@@ -9,8 +9,9 @@ const MovieListing = () => {
   const movies = useSelector(getAllMovies);
   let renderMovies = "";
   renderMovies =
-    movies.Response === "True"
-      ? movies.Search.slice(0, 6).map((movie, index) => {
+    movies.Response === "True" ? (
+      <div className="movie-banner-container">
+        {movies.Search.slice(0, 6).map((movie, index) => {
           return (
             <div className="card-item" key={index}>
               <Link to={`/${movie.Type}/${movie.imdbID}`}>
@@ -20,15 +21,22 @@ const MovieListing = () => {
               </Link>
             </div>
           );
-        })
-      : null;
+        })}
+      </div>
+    ) : (
+      <div style={{ color: "white", textAlign: "center", width: "100%" }}>
+        Not Found
+      </div>
+    );
   return (
     <div className="movie-wrapper">
-      {Object.keys(movies).length === 0  ? (
-        <div style={{ color: "white", textAlign: "center",width:"100%" }}>Loading ... </div>
+      {Object.keys(movies).length === 0 ? (
+        <div style={{ color: "white", textAlign: "center", width: "100%" }}>
+          Loading ...{" "}
+        </div>
       ) : (
         <>
-          <div className="movie-banner-container">{renderMovies}</div>
+          {renderMovies}
           <Link className="more-item" to="/movie">
             <span>More</span>
             <i className="fa fa-arrow-circle-o-right"></i>
