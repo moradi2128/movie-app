@@ -1,5 +1,7 @@
 # Movie App
 
+visit the site [Movie App](https://movie-app-moradi.netlify.app/)
+
 A Movie app list application made with React.
 Packages used:
 1. redux react-redux @reduxjs/toolkit
